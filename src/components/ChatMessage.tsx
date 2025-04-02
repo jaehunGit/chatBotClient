@@ -1,3 +1,5 @@
+"use client";
+
 type Props = {
   message: string;
   time?: string;
@@ -14,14 +16,14 @@ const ChatMessage = ({ message, time, isUser = false }: Props) => {
       {isUser ? (
         <div className="flex items-end gap-1">
           <span className="text-[10px] text-gray-400 mb-[2px]">{time}</span>
-          <div className="bg-blue-500 text-white px-4 py-2 rounded-tr-none rounded-tl-[20px] rounded-br-[20px] rounded-bl-[20px] shadow-md max-w-[80%] text-sm sm:text-base whitespace-pre-line">
+          <div className="bg-blue-500 text-white px-4 py-2 rounded-tr-none rounded-tl-[20px] rounded-br-[20px] rounded-bl-[20px] shadow-md w-auto max-w-full text-sm sm:text-base whitespace-pre-line">
             {message}
           </div>
         </div>
       ) : (
         <div className="flex flex-col items-start space-y-1">
           {message !== "..." ? (
-            <div className="bg-gray-100 text-black px-5 py-3 rounded-tl-none rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px] shadow-md max-w-[80%] text-sm sm:text-base whitespace-pre-line">
+            <div className="bg-gray-100 text-black px-5 py-3 rounded-tl-none rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px] shadow-md w-auto max-w-full text-sm sm:text-base whitespace-pre-line">
               {message}
             </div>
           ) : (

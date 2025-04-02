@@ -1,3 +1,5 @@
+"use client";
+
 import { create } from "zustand";
 
 type Message = {
@@ -17,7 +19,7 @@ export const useChatStore = create<ChatStore>((set) => ({
   messages: [
     {
       role: "bot",
-      text: "안녕하세요 👋\n궁금하신 점이 있으신가요?\n아래 버튼을 눌러주세요",
+      text: `안녕하세요 👋\n궁금하신 점이 있으신가요?\n\n아래 버튼을 눌러주세요.`,
       time: getCurrentTime(),
     },
   ],

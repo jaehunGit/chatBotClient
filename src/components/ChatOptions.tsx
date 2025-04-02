@@ -1,6 +1,6 @@
 "use client";
 
-import { useChatStore } from "@/store/useChatStore";
+import { useChatStore } from "@/store/ChatStore";
 import { botResponses } from "@/constants/responses";
 
 const options = [

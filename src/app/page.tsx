@@ -3,7 +3,7 @@
 import ChatLayout from "@/components/ChatLayout";
 import ChatMessage from "@/components/ChatMessage";
 import ChatOptions from "@/components/ChatOptions";
-import { useChatStore } from "@/store/useChatStore";
+import { useChatStore } from "@/store/ChatStore";
 
 export default function Page() {
   const messages = useChatStore((state) => state.messages);
