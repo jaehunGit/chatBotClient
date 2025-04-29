@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 type Props = {
   message: string;
@@ -9,6 +9,14 @@ type Props = {
 };
 
 const ChatMessage = ({ message, time, isUser = false }: Props) => {
+  const [clientTime, setClientTime] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (time) {
+      setClientTime(time);
+    }
+  }, [time]);
+
   return (
     <div
       className={`w-full flex ${
@@ -17,8 +25,10 @@ const ChatMessage = ({ message, time, isUser = false }: Props) => {
     >
       {isUser ? (
         <div className="flex items-end gap-1">
-          {time && (
-            <span className="text-[10px] text-gray-400 mb-[2px]">{time}</span>
+          {clientTime && (
+            <span className="text-[10px] text-gray-400 mb-[2px]">
+              {clientTime}
+            </span>
           )}
           <div className="bg-blue-500 text-white px-4 py-2 rounded-tr-none rounded-tl-[20px] rounded-br-[20px] rounded-bl-[20px] shadow-md w-auto max-w-full text-sm sm:text-base whitespace-pre-line">
             {message}
@@ -37,8 +47,8 @@ const ChatMessage = ({ message, time, isUser = false }: Props) => {
               <span className="dot animate-ping delay-400"></span>
             </div>
           )}
-          {message !== "..." && time && (
-            <span className="text-[10px] text-gray-400 pl-2">{time}</span>
+          {message !== "..." && clientTime && (
+            <span className="text-[10px] text-gray-400 pl-2">{clientTime}</span>
           )}
         </div>
       )}
