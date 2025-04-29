@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 type Props = {
   message: string;
   time?: string;
@@ -15,7 +17,9 @@ const ChatMessage = ({ message, time, isUser = false }: Props) => {
     >
       {isUser ? (
         <div className="flex items-end gap-1">
-          <span className="text-[10px] text-gray-400 mb-[2px]">{time}</span>
+          {time && (
+            <span className="text-[10px] text-gray-400 mb-[2px]">{time}</span>
+          )}
           <div className="bg-blue-500 text-white px-4 py-2 rounded-tr-none rounded-tl-[20px] rounded-br-[20px] rounded-bl-[20px] shadow-md w-auto max-w-full text-sm sm:text-base whitespace-pre-line">
             {message}
           </div>
