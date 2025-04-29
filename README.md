@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Chatbot App
 
-## Getting Started
+## 📄 프로젝트 소개
 
-First, run the development server:
+React, Next.js, Tailwind CSS, Zustand를 이용해 만든 채팅 UI 데모 애플리케이션입니다. 버튼 클릭 시 카드 레이아웃으로 메시지를 보여줍니다.
+
+## 🚀 주요 특징
+
+- **카드 레이아웃**: Introduce, Career 등 버튼별 정교한 카드 UI
+- **상태 관리**: Zustand를 이용한 전역 메시지 스토어
+- **반응형 디자인**: Tailwind CSS로 모바일/데스크톱 대응
+
+## 🛠️ 기술 스택
+
+- **Next.js** (App Router)
+- **React** (Client Components)
+- **TypeScript**
+- **Tailwind CSS**
+- **Zustand** (state management)
+- **MUI Icons** (`@mui/icons-material`)
+
+## 📦 설치 및 실행
 
 ```bash
+# 리포지토리 클론
+git clone https://github.com/jaehunGit/chatBotClient.git
+
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📸 스크린샷
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **초기 화면**&#x20;
+![image](https://github.com/user-attachments/assets/2bb19699-445d-404a-9db3-ddf03b6a9646)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Introduce 카드**&#x20;
+![image](https://github.com/user-attachments/assets/2f71b84f-d359-474a-8b96-199125fb3160)
 
-## Learn More
+3. **Career 카드 레이아웃**&#x20;
+![image](https://github.com/user-attachments/assets/57411599-783d-4f9d-9d7c-d08f737c8cdd)
 
-To learn more about Next.js, take a look at the following resources:
+## 📖 사용법
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. 버튼(👋, 📚, 💻 등)을 클릭하세요.
+2. 해당 카드가 표시됩니다.
+3. 페이지를 새로고침하면 초기 봇 인사 메시지로 돌아갑니다.
