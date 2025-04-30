@@ -6,7 +6,8 @@ React, Next.js, Tailwind CSS, Zustand를 이용해 만든 채팅 UI 데모 애�
 
 ## 🚀 주요 특징
 
-- **카드 레이아웃**: Introduce, Career 등 버튼별 정교한 카드 UI
+- **카드 레이아웃**: Introduce, Career, Skills 등 버튼별 카드 UI
+- **스킬 카드**: React, Next.js, Java Spring 등 주요 기술을 가로 스크롤로 확인 가능
 - **상태 관리**: Zustand를 이용한 전역 메시지 스토어
 - **반응형 디자인**: Tailwind CSS로 모바일/데스크톱 대응
 
@@ -17,7 +18,6 @@ React, Next.js, Tailwind CSS, Zustand를 이용해 만든 채팅 UI 데모 애�
 - **TypeScript**
 - **Tailwind CSS**
 - **Zustand** (state management)
-- **MUI Icons** (`@mui/icons-material`)
 
 ## 📦 설치 및 실행
 
@@ -43,6 +43,10 @@ npm run dev
 
 3. **Career 카드 레이아웃**&#x20;
 ![image](https://github.com/user-attachments/assets/57411599-783d-4f9d-9d7c-d08f737c8cdd)
+
+4. **Skills 카드 레이아웃**&#x20;
+![image](https://github.com/user-attachments/assets/4aa65752-713b-4f9a-9cf6-74f0b6f967ce)
+
 
 ## 📖 사용법
 
