@@ -49,7 +49,7 @@ const ChatOptions = () => {
       )}
 
       <div className="flex gap-1 flex-wrap">
-        {options.slice(0, 4).map(({ label, icon }) => (
+        {options.slice(0, 3).map(({ label, icon }) => (
           <button
             key={label}
             onClick={() => handleClick(label, icon)}
@@ -60,7 +60,7 @@ const ChatOptions = () => {
         ))}
       </div>
       <div className="flex gap-1 flex-wrap">
-        {options.slice(4).map(({ label, icon }) => (
+        {options.slice(3).map(({ label, icon }) => (
           <button
             key={label}
             onClick={() => handleClick(label, icon)}
