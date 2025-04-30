@@ -7,24 +7,28 @@ const options = [
   { label: "Introduce", icon: "👋" },
   { label: "Career", icon: "📚" },
   { label: "Skills", icon: "💻" },
-  { label: "Projects", icon: "✨" },
-  { label: "Works", icon: "👨‍💻" },
+  { label: "Projects & Works", icon: "👨‍💻" },
   { label: "Contact", icon: "📧" },
 ];
 
 const getCurrentTime = (): string => {
   const now = new Date();
   const hours = now.getHours();
-  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const mins = String(now.getMinutes()).padStart(2, "0");
   const period = hours < 12 ? "오전" : "오후";
-  const formattedHour = hours > 12 ? hours - 12 : hours;
-  return `${period} ${formattedHour}:${minutes}`;
+  const hour12 = hours > 12 ? hours - 12 : hours;
+  return `${period} ${hour12}:${mins}`;
 };
 
 const ChatOptions = () => {
+  const messages = useChatStore((s) => s.messages);
   const addMessage = useChatStore((s) => s.addMessage);
   const addBotCardResponse = useChatStore((s) => s.addBotCardResponse);
-  const messages = useChatStore((s) => s.messages);
+
+  const last = messages[messages.length - 1];
+  if (last.role === "bot" && last.text === "...") {
+    return null;
+  }
 
   const hasUserClicked = messages.some((m) => m.role === "user");
 
@@ -38,8 +42,7 @@ const ChatOptions = () => {
       type: "text",
     });
 
-    const response = botResponses[label] ?? "아직 준비되지 않은 항목입니다.";
-    addBotCardResponse(label, response);
+    addBotCardResponse(label, botResponses[label] ?? "준비 중인 항목입니다.");
   };
 
   return (
@@ -48,7 +51,7 @@ const ChatOptions = () => {
         <p className="text-xs text-gray-400 mb-1">더 궁금하신 게 있으세요?</p>
       )}
 
-      <div className="flex gap-1 flex-wrap">
+      <div className="flex gap-1 flex-wrap justify-end">
         {options.slice(0, 3).map(({ label, icon }) => (
           <button
             key={label}
@@ -59,7 +62,7 @@ const ChatOptions = () => {
           </button>
         ))}
       </div>
-      <div className="flex gap-1 flex-wrap">
+      <div className="flex gap-1 flex-wrap justify-end">
         {options.slice(3).map(({ label, icon }) => (
           <button
             key={label}

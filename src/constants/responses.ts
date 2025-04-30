@@ -27,7 +27,13 @@ PDP 운영 (2023-01-01 ~ 2023-06-30)
 - 역할별 인터락 기능 추가 및 시스템 운영`,
 
   Skills: `React, TypeScript, Zustand, Tailwind CSS 등 다양한 기술을 활용합니다.`,
-  Projects: `제가 참여했던 프로젝트 리스트입니다.`,
-  Works: `업무 성과 및 결과물을 소개합니다.`,
+  "Projects & Works": `👨‍💻 **프로젝트 & 주요 업무**
+1. **개인 포트폴리오 사이트** (Next.js / TailwindCSS)
+- SPA 개발, MDX 활용・GitHub Pages 배포 경험
+2. **풍강 MES 시스템 구축** (DevExpress WinForms / MSSQL)
+- 생산 관리 화면 설계·구현, 스케줄러 자동화, DB 최적화
+3. **SK Hynix PDP & HTRS 운영** (React / Java Spring Boot)
+- UI/UX 개선, Excel 자동화, 조직도 화면 개발·DB 연동
+`,
   Contact: `메일로 연락 주시면 빠르게 답변 드리겠습니다!`,
 };

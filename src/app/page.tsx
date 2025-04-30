@@ -1,9 +1,9 @@
 "use client";
 
+import React from "react";
 import ChatLayout from "@/components/ChatLayout";
 import ChatMessage from "@/components/ChatMessage";
 import ChatOptions from "@/components/ChatOptions";
-import ChatCardLayout from "@/components/ChatCardLayout";
 import IntroduceCard from "@/components/IntroduceCard";
 import CareerCard from "@/components/CareerCard";
 import SkillsCard from "@/components/SkillsCard";
@@ -19,9 +19,7 @@ export default function Page() {
           msg.text === "..." &&
           (msg.type === "text" || msg.type === "card")
         ) {
-          return (
-            <ChatMessage key={i} message="..." time={msg.time} isUser={false} />
-          );
+          return <ChatMessage key={i} message="..." time={msg.time} />;
         }
 
         if (msg.type === "card") {
@@ -32,19 +30,6 @@ export default function Page() {
               return <CareerCard key={i} time={msg.time} />;
             case "Skills":
               return <SkillsCard key={i} time={msg.time} />;
-            default:
-              return (
-                <div key={i} className="space-y-1 w-full">
-                  <ChatCardLayout title={msg.title}>
-                    <div className="max-h-96 overflow-y-auto whitespace-pre-line">
-                      {msg.text}
-                    </div>
-                  </ChatCardLayout>
-                  <span className="text-[10px] text-gray-400 pl-2">
-                    {msg.time}
-                  </span>
-                </div>
-              );
           }
         }
 
