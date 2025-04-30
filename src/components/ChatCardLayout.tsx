@@ -6,7 +6,12 @@ export type ChatCardLayoutProps = {
 };
 
 const ChatCardLayout: React.FC<ChatCardLayoutProps> = ({ title, children }) => {
-  const maxHClass = title === "Introduce" ? "max-h-96" : "max-h-60";
+  const maxHClass =
+    title === "Introduce"
+      ? "max-h-96"
+      : title === "Career"
+      ? "max-h-[800px]"
+      : "max-h-80";
 
   return (
     <div className="w-full bg-gray-100 text-black px-2 py-2 rounded-tl-none rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px] shadow-md max-w-full">
